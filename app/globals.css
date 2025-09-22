@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 240 88% 53%;
+    --accent: 177 74% 55%;
+    --bg: 220 38% 97%;
+    --surface: 0 0% 100%;
+    --text-primary: 220 39% 15%;
+    --text-secondary: 220 10% 45%;
+    --border: 220 14% 93%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gradient-main text-text-primary;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-6 py-4;
+  }
+
+  .display {
+    @apply text-3xl font-bold;
+  }
+
+  .heading-md {
+    @apply text-xl font-semibold;
+  }
+
+  .body-lg {
+    @apply text-base font-normal leading-7;
+  }
+
+  .body-sm {
+    @apply text-sm font-normal leading-5;
+  }
+
+  .card {
+    @apply bg-surface rounded-lg shadow-card border border-border;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white px-4 py-2 rounded-md font-medium hover:opacity-90 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-surface text-text-primary border border-border px-4 py-2 rounded-md font-medium hover:bg-gray-50 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .floating-element {
+    @apply absolute animate-bounce-slow;
+  }
+
+  .glow-effect {
+    @apply relative;
+  }
+
+  .glow-effect::before {
+    content: '';
+    @apply absolute inset-0 rounded-full bg-gradient-to-r from-accent to-primary opacity-20 blur-xl animate-pulse-slow;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--bg));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--text-secondary));
+}

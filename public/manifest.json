@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjkxNTIsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHgwMmVmNzkwRGQ3OTkzQTM1ZkQ4NDdDMDUzRURkQUU5NDBEMDU1NTk2In0",
+    "payload": "eyJkb21haW4iOiJncmF0aXR1ZGVmbG93LmFwcCJ9",
+    "signature": "MHgxMGQwZGU4ZGYwZDUwZTdmMGIxN2YxMTU2NDI1MjRmZTY0MTUyZGU4ZGU1MWU0MThiYjU4ZjVmZmQxYjRjNDBiNGVlZTRhNDcwNmVmNjhlMzQ0ZGQ5MDBkYmQyMmNlMmVlZGY5ZGQ0N2JlNWRmNzMwYzUxNjE4OWVjZDJjY2Y0MDFj"
+  },
+  "frame": {
+    "version": "1",
+    "name": "GratitudeFlow",
+    "homeUrl": "https://gratitudeflow.app",
+    "iconUrl": "https://gratitudeflow.app/icon.png",
+    "splashImageUrl": "https://gratitudeflow.app/splash.png",
+    "splashBackgroundColor": "#87CEEB",
+    "webhookUrl": "https://gratitudeflow.app/api/webhook",
+    "subtitle": "Tip creators, unlock rewards",
+    "description": "A Base mini-app that enhances creator tipping with gamification, personalized shout-outs, exclusive content access, and goal tracking.",
+    "screenshotUrls": [
+      "https://gratitudeflow.app/screenshot1.png",
+      "https://gratitudeflow.app/screenshot2.png",
+      "https://gratitudeflow.app/screenshot3.png"
+    ],
+    "primaryCategory": "social",
+    "tags": ["tipping", "creators", "rewards", "base", "miniapp"],
+    "heroImageUrl": "https://gratitudeflow.app/hero.png",
+    "tagline": "Fuel creativity with gratitude",
+    "ogTitle": "GratitudeFlow - Tip creators, unlock rewards",
+    "ogDescription": "Tip creators, unlock rewards, and fuel their next big thing—all in one stream.",
+    "ogImageUrl": "https://gratitudeflow.app/og-image.png"
+  }
+}
