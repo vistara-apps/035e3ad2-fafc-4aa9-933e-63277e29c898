@@ -2,9 +2,9 @@ import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -17,29 +17,33 @@ const config: Config = {
         'text-secondary': 'hsl(220 10% 45%)',
         border: 'hsl(220 14% 93%)',
       },
+      fontSize: {
+        'display': ['text-3xl', 'font-bold'],
+        'heading-md': ['text-xl', 'font-semibold'],
+        'body-lg': ['text-base', 'font-normal leading-7'],
+        'body-sm': ['text-sm', 'font-normal leading-5'],
+      },
       borderRadius: {
-        'sm': '6px',
-        'md': '10px',
-        'lg': '16px',
+        sm: '6px',
+        md: '10px',
+        lg: '16px',
       },
       spacing: {
-        'xs': '4px',
-        'sm': '8px',
-        'md': '12px',
-        'lg': '20px',
-        'xl': '24px',
+        xs: '4px',
+        sm: '8px',
+        md: '12px',
+        lg: '20px',
+        xl: '24px',
       },
       boxShadow: {
-        'card': '0 4px 12px hsla(220 39% 15% / 0.1)',
+        card: '0 4px 12px hsla(220 39% 15% / 0.1)',
       },
       animation: {
-        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'bounce-slow': 'bounce 2s infinite',
+        'fast': '150ms',
+        'base': '250ms',
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-main': 'linear-gradient(135deg, #87CEEB 0%, #DDA0DD 50%, #DA70D6 100%)',
+      transitionTimingFunction: {
+        'ease-out': 'cubic-bezier(0.22,1,0.36,1)',
       },
     },
   },
@@ -47,3 +51,4 @@ const config: Config = {
 }
 
 export default config
+

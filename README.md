@@ -1,140 +1,250 @@
 # GratitudeFlow
 
-A Base Mini App that enhances creator tipping with gamification, personalized shout-outs, exclusive content access, and goal tracking.
+**Tip creators, unlock rewards, and fuel their next big thing—all in one stream.**
+
+A Base mini-app that enhances creator tipping with gamification, personalized shout-outs, exclusive content access, and goal tracking.
 
 ## Features
 
-- **Gamified Tipping Tiers**: Progress through tiers with cumulative tips and unlock rewards
-- **Personalized Shout-outs**: Send custom messages with tips for direct creator connection
-- **Exclusive Content Access**: Unlock special content by reaching tipping thresholds
-- **Tipping Goal Tracker**: Visual progress tracking for creator goals and projects
+### 🎯 Core Features
 
-## Tech Stack
+- **Gamified Tipping Tiers**: Creators set tiered tipping levels with rewards (badges, shout-outs, early access)
+- **Personalized Shout-outs**: Tippers include custom messages for creator responses
+- **Exclusive Content Access**: Gate content behind tipping thresholds or tiers
+- **Tipping Goal Tracker**: Visual progress bars showing creator goals and tipper impact
 
-- **Framework**: Next.js 15 with App Router
-- **Blockchain**: Base Network
-- **Wallet Integration**: MiniKit + OnchainKit
-- **Styling**: Tailwind CSS with custom design system
-- **TypeScript**: Full type safety throughout
+### 🎨 Design System
+
+- **Primary Color**: `hsl(240 88% 53%)` - Deep purple
+- **Accent Color**: `hsl(177 74% 55%)` - Teal green
+- **Background**: `hsl(220 38% 97%)` - Light gray
+- **Typography**: Inter font family with custom sizing
+
+### 🛠️ Technical Stack
+
+- **Frontend**: Next.js 14 with TypeScript
+- **Styling**: Tailwind CSS with custom design tokens
+- **Blockchain**: Base network integration
+- **Wallet**: Base Wallet SDK
+- **Deployment**: Vercel (recommended for mini-apps)
 
 ## Getting Started
 
-1. **Clone and install dependencies**:
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+- Base Wallet (for testing transactions)
+
+### Installation
+
+1. Clone the repository:
 ```bash
 git clone <repository-url>
 cd gratitude-flow
+```
+
+2. Install dependencies:
+```bash
 npm install
 ```
 
-2. **Set up environment variables**:
+3. Create environment variables:
 ```bash
-cp .env.local.example .env.local
+cp .env.example .env.local
 ```
 
-Add your OnchainKit API key from [Coinbase Developer Platform](https://portal.cdp.coinbase.com/).
+4. Configure your environment:
+```env
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+# Add other environment variables as needed
+```
 
-3. **Run the development server**:
+5. Run the development server:
 ```bash
 npm run dev
 ```
 
-4. **Open in Base App**:
-Navigate to `http://localhost:3000` in Base App or compatible Farcaster client.
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Project Structure
-
-```
-├── app/                    # Next.js App Router
-│   ├── layout.tsx         # Root layout with providers
-│   ├── page.tsx           # Main app page
-│   ├── providers.tsx      # MiniKit and OnchainKit providers
-│   └── globals.css        # Global styles and design tokens
-├── components/            # React components
-│   ├── AppShell.tsx       # Main app wrapper
-│   ├── CreatorProfile.tsx # Creator information display
-│   ├── TippingInterface.tsx # Main tipping functionality
-│   ├── GoalTracker.tsx    # Goal progress visualization
-│   ├── TierProgress.tsx   # Tier system display
-│   └── ...               # Other UI components
-├── lib/                   # Utilities and types
-│   ├── types.ts          # TypeScript type definitions
-│   ├── mockData.ts       # Sample data for development
-│   └── utils.ts          # Helper functions
-└── public/               # Static assets
-    └── manifest.json     # Base Mini App manifest
-```
-
-## Design System
-
-The app uses a custom design system with:
-
-- **Colors**: Primary blue, accent teal, gradient backgrounds
-- **Typography**: Responsive text scales with semantic naming
-- **Components**: Modular, reusable UI components
-- **Motion**: Smooth transitions and micro-interactions
-
-## Key Components
-
-### TippingInterface
-Main component handling tip amounts, tier selection, and transaction processing.
-
-### GoalTracker
-Displays creator goals with progress bars and visual feedback.
-
-### TierProgress
-Shows available tipping tiers and user progression.
-
-### CreatorProfile
-Creator information, stats, and social proof.
-
-## Development
-
-### Adding New Features
-
-1. Define types in `lib/types.ts`
-2. Create components in `components/`
-3. Add mock data in `lib/mockData.ts`
-4. Integrate in main page
-
-### Styling Guidelines
-
-- Use Tailwind CSS classes
-- Follow the design system tokens
-- Implement mobile-first responsive design
-- Add smooth transitions for interactions
-
-### Testing
+### Building for Production
 
 ```bash
-npm run build    # Test production build
-npm run lint     # Check code quality
+npm run build
+npm start
 ```
+
+## API Documentation
+
+### Creator Data API
+
+**GET** `/api/creator/[id]`
+
+Returns creator information including goals, tiers, and exclusive content.
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "creatorId": "string",
+    "fName": "string",
+    "fUsername": "string",
+    "profilePicUrl": "string",
+    "baseUrl": "string",
+    "tipGoals": [...],
+    "tippingTiers": [...],
+    "exclusiveContent": [...]
+  }
+}
+```
+
+### Tip Processing API
+
+**POST** `/api/tip`
+
+Processes a tip transaction and updates creator goals.
+
+**Request Body:**
+```json
+{
+  "tipperId": "string",
+  "creatorId": "string",
+  "amount": "number",
+  "message": "string (optional)",
+  "tierAchieved": "number (optional)"
+}
+```
+
+## Farcaster Frame Integration
+
+The app includes Farcaster frame metadata for seamless integration with Farcaster clients.
+
+### Frame Meta Tags
+
+```html
+<meta property="fc:frame" content="vNext" />
+<meta property="fc:frame:image" content="/frame-image.svg" />
+<meta property="fc:frame:button:1" content="Tip Creator" />
+<meta property="fc:frame:button:1:action" content="post" />
+<meta property="fc:frame:post_url" content="/api/frame" />
+```
+
+## Component Architecture
+
+### Core Components
+
+- **AppShell**: Main layout wrapper
+- **TipButton**: Reusable button for tipping actions
+- **TierCard**: Displays tipping tier information
+- **GoalProgress**: Shows goal completion progress
+- **ShoutOutForm**: Form for personalized messages
+- **ContentCard**: Displays exclusive content
+
+### Custom Hooks
+
+- **useBaseWallet**: Manages Base wallet connection and transactions
+- **useCreatorData**: Fetches and manages creator data
+
+## Data Models
+
+### User
+```typescript
+interface User {
+  userId: string;
+  fName: string;
+  fUsername: string;
+  profilePicUrl: string;
+  baseUrl: string;
+  tipHistory: Tip[];
+}
+```
+
+### Creator
+```typescript
+interface Creator {
+  creatorId: string;
+  fName: string;
+  fUsername: string;
+  profilePicUrl: string;
+  baseUrl: string;
+  tipGoals: TipGoal[];
+  tippingTiers: TippingTier[];
+  exclusiveContent: ExclusiveContent[];
+}
+```
+
+### Tip
+```typescript
+interface Tip {
+  tipId: string;
+  tipperId: string;
+  creatorId: string;
+  amount: number;
+  timestamp: Date;
+  message?: string;
+  tierAchieved?: number;
+  isPersonalized: boolean;
+}
+```
+
+## Business Model
+
+- **Type**: Micro-transactions
+- **Pricing**: Tiered tipping with optional premium features
+- **Target**: Free core tipping, premium features for enhanced engagement
+
+## User Flows
+
+### Tipping Flow
+1. User views creator profile/frame
+2. User clicks "Tip Creator" button
+3. User selects tip amount and optional message
+4. User reviews transaction in Base Wallet
+5. Transaction submitted to Base blockchain
+6. User sees confirmation and updated progress
+
+### Creator Setup Flow
+1. Creator defines tipping goals and tiers
+2. Creator deploys smart contracts
+3. Creator shares GratitudeFlow frame link
 
 ## Deployment
 
-1. **Build the application**:
-```bash
-npm run build
+### Vercel Deployment
+
+1. Connect your GitHub repository to Vercel
+2. Configure environment variables
+3. Deploy automatically on push to main branch
+
+### Environment Variables
+
+```env
+NEXT_PUBLIC_BASE_URL=https://your-domain.com
+# Add Base network configuration
+# Add wallet connection settings
 ```
-
-2. **Deploy to your preferred platform** (Vercel, Netlify, etc.)
-
-3. **Update manifest.json** with your production URLs
-
-4. **Submit to Base App** for discovery
 
 ## Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Test thoroughly
+4. Add tests if applicable
 5. Submit a pull request
 
 ## License
 
-MIT License - see LICENSE file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Support
 
-For questions or support, please open an issue or contact the development team.
+For support and questions:
+- Create an issue in the GitHub repository
+- Join our Discord community
+- Check the documentation
+
+---
+
+**Built with ❤️ for the creator economy on Base**
+
