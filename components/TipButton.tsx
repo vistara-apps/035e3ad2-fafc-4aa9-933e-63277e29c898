@@ -69,12 +69,12 @@ export function TipButton({
       className={cn(
         'flex items-center justify-center gap-2 px-6 py-3 rounded-md font-medium transition-all duration-200 relative overflow-hidden',
         variant === 'primary' && [
-          'bg-gradient-to-r from-primary to-accent text-white',
+          'bg-gradient-to-r from-blue-600 to-green-400 text-white',
           'hover:shadow-lg hover:scale-105',
           'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100'
         ],
         variant === 'secondary' && [
-          'bg-surface border border-border text-text-primary',
+          'bg-white border border-gray-200 text-gray-900',
           'hover:bg-gray-50',
           'disabled:opacity-50 disabled:cursor-not-allowed'
         ],

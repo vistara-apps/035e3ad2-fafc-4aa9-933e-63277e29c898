@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useMiniKit } from '@coinbase/minikit';
 import { AppShell } from '../components/AppShell';
 import { CreatorProfile } from '../components/CreatorProfile';
 import { TippingInterface } from '../components/TippingInterface';
@@ -12,7 +11,8 @@ import { mockCreator, mockGoals, mockTiers } from '../lib/mockData';
 import type { Creator, TipGoal, TippingTier } from '../lib/types';
 
 export default function HomePage() {
-  const { context } = useMiniKit();
+  // Mock user context for demo purposes
+  const mockUserId = 'demo-user-123';
   const [creator, setCreator] = useState<Creator>(mockCreator);
   const [goals, setGoals] = useState<TipGoal[]>(mockGoals);
   const [tiers, setTiers] = useState<TippingTier[]>(mockTiers);
@@ -41,7 +41,7 @@ export default function HomePage() {
       ...prev,
       tipHistory: [...prev.tipHistory, {
         tipId: Date.now().toString(),
-        tipperId: context?.user?.fid?.toString() || 'anonymous',
+        tipperId: mockUserId,
         creatorId: prev.creatorId,
         amount,
         timestamp: new Date(),
@@ -58,7 +58,7 @@ export default function HomePage() {
         <div className="flex items-center justify-center min-h-screen">
           <div className="text-center space-y-4">
             <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto"></div>
-            <p className="body-lg text-text-secondary">Loading creator profile...</p>
+            <p className="body-lg text-gray-600">Loading creator profile...</p>
           </div>
         </div>
       </AppShell>
@@ -75,7 +75,7 @@ export default function HomePage() {
 
         {/* Goals Section */}
         <section className="space-y-4">
-          <h2 className="heading-md text-text-primary">Current Goals</h2>
+          <h2 className="heading-md text-gray-900">Current Goals</h2>
           <div className="space-y-4">
             {goals.map(goal => (
               <GoalTracker key={goal.goalId} goal={goal} />
@@ -85,7 +85,7 @@ export default function HomePage() {
 
         {/* Tipping Tiers Section */}
         <section className="space-y-4">
-          <h2 className="heading-md text-text-primary">Tipping Tiers</h2>
+          <h2 className="heading-md text-gray-900">Tipping Tiers</h2>
           <TierProgress tiers={tiers} currentTier={1} />
         </section>
 
