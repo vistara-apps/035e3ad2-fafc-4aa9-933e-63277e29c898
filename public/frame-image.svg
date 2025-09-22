@@ -1,0 +1,15 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#FAF7FF"/>
+  <rect x="100" y="100" width="1000" height="430" rx="20" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="2"/>
+  <circle cx="200" cy="200" r="40" fill="#240088"/>
+  <text x="260" y="190" font-family="Inter, sans-serif" font-size="24" font-weight="600" fill="#1C1C1E">Support Alex</text>
+  <text x="260" y="220" font-family="Inter, sans-serif" font-size="16" fill="#6B7280">@alexcreator</text>
+  <text x="150" y="320" font-family="Inter, sans-serif" font-size="18" font-weight="500" fill="#1C1C1E">Current Goal: New Microphone</text>
+  <text x="150" y="350" font-family="Inter, sans-serif" font-size="14" fill="#6B7280">Help me get better audio for clearer streams</text>
+  <rect x="150" y="380" width="300" height="8" rx="4" fill="#E4E4E7"/>
+  <rect x="150" y="380" width="120" height="8" rx="4" fill="#00D4AA"/>
+  <text x="470" y="387" font-family="Inter, sans-serif" font-size="12" fill="#6B7280">40% complete</text>
+  <text x="150" y="420" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#240088">Send a tip to show your support!</text>
+  <text x="100" y="580" font-family="Inter, sans-serif" font-size="14" fill="#6B7280">Powered by GratitudeFlow on Base</text>
+</svg>
+
