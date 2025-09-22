@@ -11,14 +11,14 @@ interface AppShellProps {
 export function AppShell({ children, className }: AppShellProps) {
   return (
     <div className={cn(
-      'min-h-screen bg-gradient-main relative overflow-hidden',
+      'min-h-screen bg-gradient-to-br from-sky-200 via-purple-200 to-pink-200 relative overflow-hidden',
       className
     )}>
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl"></div>
-        <div className="absolute top-40 right-16 w-24 h-24 bg-accent/20 rounded-full blur-lg"></div>
-        <div className="absolute bottom-32 left-20 w-40 h-40 bg-primary/10 rounded-full blur-2xl"></div>
+        <div className="absolute top-40 right-16 w-24 h-24 bg-green-400/20 rounded-full blur-lg"></div>
+        <div className="absolute bottom-32 left-20 w-40 h-40 bg-blue-600/10 rounded-full blur-2xl"></div>
         <div className="absolute bottom-20 right-10 w-28 h-28 bg-white/5 rounded-full blur-xl"></div>
       </div>
 
