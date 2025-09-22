@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "GratitudeFlow",
+    "subtitle": "Built with Zara",
+    "description": "GratitudeFlow is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://035e3ad2fafc4aa9933e63277e29c898-eg6d.vercel.app",
+    "splashImageUrl": "https://035e3ad2fafc4aa9933e63277e29c898-eg6d.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://035e3ad2fafc4aa9933e63277e29c898-eg6d.vercel.app/image.png",
+    "tagline": "GratitudeFlow",
+    "screenshotUrls": [
+      "https://035e3ad2fafc4aa9933e63277e29c898-eg6d.vercel.app/screenshot.png",
+      "https://035e3ad2fafc4aa9933e63277e29c898-eg6d.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://035e3ad2fafc4aa9933e63277e29c898-eg6d.vercel.app/api/webhook"
+  }
+}

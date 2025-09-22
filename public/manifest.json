@@ -20,7 +20,13 @@
       "https://gratitudeflow.app/screenshot3.png"
     ],
     "primaryCategory": "social",
-    "tags": ["tipping", "creators", "rewards", "base", "miniapp"],
+    "tags": [
+      "tipping",
+      "creators",
+      "rewards",
+      "base",
+      "miniapp"
+    ],
     "heroImageUrl": "https://gratitudeflow.app/hero.png",
     "tagline": "Fuel creativity with gratitude",
     "ogTitle": "GratitudeFlow - Tip creators, unlock rewards",
